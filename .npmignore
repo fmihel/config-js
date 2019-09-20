@@ -1,0 +1,8 @@
+node_modules
+
+# При создании проекта на основе данной конфигурации разблокировать следующие строки
+# test
+# test_in_browser
+# .eslintignore
+# .gitignore
+# .eslintrs.js
