@@ -32,6 +32,11 @@ module.exports = {
         ],
     },
     mode: 'development',
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: PUBLIC_PATH,
+        port: ServerConfig.port,
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new webpack.ProvidePlugin({
