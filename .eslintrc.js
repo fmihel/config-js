@@ -29,6 +29,7 @@ module.exports = {
         "no-useless-constructor":"off",
         "no-unused-vars":"warn",
         'class-methods-use-this':"warn",
+        'no-plusplus':'off',
         "indent": [
             "error",
             4
