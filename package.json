@@ -4,8 +4,9 @@
   "description": "javascript project for tests",
   "main": "server/index.js",
   "scripts": {
-    "webpack": "webpack",
-    "auto": "webpack-dev-server"
+    "build-dev": "webpack",
+    "build-prod": "webpack --prod",
+    "dev-server": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
