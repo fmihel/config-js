@@ -3,30 +3,25 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { PageReloadPlugin } = require('page-reload-webpack-plugin');
-const ServerConfig = require('./server/config');
+const { defArg } = require('fmihel-server-lib');
 
 
-function defArg(name){
-    return process.argv.find( a=> ( (a===name) || (a===('--'+name)) ) )!==undefined;
-}
-
-const toProduction  = defArg('prod');
+const toProduction = defArg('prod');
 const runPluginReload = defArg('pluginReload');
 
 const SOURCE_PATH = './app/';
-const PUBLIC_PATH = ServerConfig.public;
+const PUBLIC_PATH = './public/';
 const TEMPLATE_PATH = './app/template/';
 const MEDIA_PATH = './app/media/';
-
+const PORT = 3000;
 module.exports = {
-    mode: toProduction?'production':'development',
-    devtool: toProduction?'inline-source-map':false,
+    mode: toProduction ? 'production' : 'development',
+    devtool: toProduction ? 'inline-source-map' : false,
     devServer: {
         // contentBase: path.join(__dirname, 'public'),
         // watchContentBase: true,
 
-        port: ServerConfig.port,
+        port: PORT,
     },
 
     entry: `${SOURCE_PATH}index.js`,
@@ -62,6 +57,5 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: `${MEDIA_PATH}favicon.ico` },
         ]),
-        new PageReloadPlugin({ port: ServerConfig.port ,enable:runPluginReload}),
     ],
 };
