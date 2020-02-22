@@ -15,6 +15,6 @@ $(() => {
     });
 
     $('#three').on('click', () => {
-        console.info('click on #three');
+        console.info('click on #three 2');
     });
 });
