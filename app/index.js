@@ -1,5 +1,4 @@
-import './template/define.css';
-import './template/main.css';
+import './template/style.scss';
 
 $(() => {
     const text = 'Javasript simple project.';
