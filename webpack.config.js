@@ -16,7 +16,7 @@ const MEDIA_PATH = './app/media/';
 const PORT = 3000;
 module.exports = {
     mode: toProduction ? 'production' : 'development',
-    devtool: toProduction ? 'inline-source-map' : false,
+    devtool: toProduction ? false : 'inline-source-map',
     devServer: {
         // contentBase: path.join(__dirname, 'public'),
         // watchContentBase: true,
